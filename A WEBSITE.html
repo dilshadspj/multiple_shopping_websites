@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/acer/Downloads/task_7.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://img.icons8.com/?size=1x&amp;id=5zuVgEwv1rTz&amp;format=png">
+  <title>A WEBSITE</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+      font-family: "ubuntu";
+    }
+
+    img {
+      width: 100%;
+    }
+
+    header {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 50px;
+      background: #0b2239;
+    }
+
+    header .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    header .header-left .logo {
+      width: 140px;
+    }
+
+    header .header-left nav {
+      margin-left: 50px;
+    }
+
+    header .header-left nav ul {
+      display: flex;
+    }
+
+    nav ul li a {
+      display: block;
+      color: #d7cfe0;
+      font-size: 18px;
+      padding: 5px 10px;
+      transition: 0.2s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: rgb(204, 255, 0);
+    }
+
+    nav .login-signup {
+      display: none;
+    }
+
+    header .header-right {
+      display: flex;
+      align-items: center;
+    }
+
+    header .login-signup {
+      color: #e0d7cf;
+      font-weight: bold;
+    }
+
+    header .login-signup a {
+      display: inline-block;
+      color: rgb(255, 255, 255);
+      background:blue;
+      padding: 5px 12px;
+      border-radius: 5px;
+    }
+
+    header .login-signup a:hover {
+      display: inline-block;
+      color: white;
+      background: red;
+      padding: 5px 12px;
+      border-radius: 5px;
+    }
+
+    header .header-right .hamburger {
+      margin-left: 20px;
+      cursor: pointer;
+      display: none;
+    }
+
+    header .header-right .hamburger div {
+      width: 30px;
+      height: 2px;
+      margin: 6px 0;
+      background: #fff;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      header {
+        padding: 0 20px;
+      }
+
+      header .header-right .hamburger {
+        display: block;
+      }
+
+      header .header-left nav {
+        margin: 0;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        background-color: #0b2239;
+        padding: 30px;
+        transition: 0.3s;
+        text-align: center;
+        z-index: -1;
+      }
+
+      header .header-left nav.active {
+        top: 70px;
+      }
+
+      header .header-left nav ul {
+        display: block;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      nav .login-signup {
+        display: block;
+        margin-top: 20px;
+      }
+
+      header .header-right .login-signup {
+        display: none;
+      }
+    }
+
+    .banner {
+      height: 400px;
+      width: 100%;
+      background-image: url(pexels-veeterzy-303383.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .banner-text h1 {
+      padding: 150px;
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      text-align: center;
+      font-size: 60px;
+      color:red;
+      text-shadow: 3px 3px #cccccc, 5px 5px 0 #9ba45b;
+    }
+
+    .main {
+      background-image: url(pexels-veeterzy-303383.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 2px;
+      padding: 0;
+      border: 5px solid #000000b5;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 2px solid aqua;
+      width: 20%;
+      display: inline-block;
+      box-shadow: 2px 2px 20px black;
+      border-radius: 5px;
+      margin: 2%;
+    }
+
+    .image img {
+      border: 2px solid black;
+      border-radius: 10px;
+      height: 300px;
+      width: 100%;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+
+    .title {
+
+      text-align: center;
+      padding: 10px;
+
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    .des {
+      padding: 3px;
+      text-align: center;
+      padding-top: 10px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    button {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      background-color: blue;
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    button:hover {
+      background-color: red;
+      color: white;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    footer {
+      color: #fff;
+      bottom: 0px;
+      width: 100%;
+      background: #0b2239;
+    }
+
+    .main-content {
+      display: flex;
+    }
+
+    .main-content .box {
+      flex-basis: 50%;
+      padding: 10px 20px;
+    }
+
+    .box h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .box .content {
+      margin: 20px 0 0 0;
+      position: relative;
+    }
+
+    .box .content:before {
+      position: absolute;
+      content: '';
+      top: -10px;
+      height: 2px;
+      width: 100%;
+    }
+
+    .box .content:after {
+      position: absolute;
+      content: '';
+      height: 2px;
+      width: 15%;
+      background: blueviolet;
+      top: -10px;
+    }
+
+    .left .content p {
+      text-align: justify;
+    }
+
+    .left .content .social {
+      margin: 20px 0 0 0;
+    }
+
+    .left .content .social a {
+      padding: 0 2px;
+    }
+
+    .left .content .social a span {
+      height: 40px;
+      width: 40px;
+      background-color: white;
+      line-height: 40px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .left .content .social a span:hover {
+      background:gold;
+    }
+
+    .center .content .fas {
+      font-size: 1.4375rem;
+      background-color: greenyellow;
+      height: 45px;
+      width: 45px;
+      line-height: 45px;
+      text-align: center;
+      border-radius: 50%;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .center .content .fas:hover {
+      background: rgb(12, 166, 9);
+    }
+
+    .center .content .text {
+      font-size: 1.0625rem;
+      font-weight: 500;
+      padding-left: 10px;
+    }
+
+    .center .content .phone {
+      margin: 15px 0;
+    }
+
+    .right form .text {
+      font-size: 1.0625rem;
+      margin-bottom: 2px;
+      color: white;
+    }
+
+    .right form .msg {
+      margin-top: 10px;
+    }
+
+    .right form input,
+    .right form textarea {
+      width: 100%;
+      font-size: 1.0625rem;
+      background:skyblue;
+      padding-left: 10px;
+      border: 1px solid green;
+    }
+
+    .right form input:focus,
+    .right form textarea:focus {
+      outline-color:yellow;
+    }
+
+    .right form input {
+      height: 35px;
+    }
+
+    .right form .btn {
+      margin-top: 10px;
+    }
+
+    .right form .btn button {
+      height: 40px;
+      width: 100%;
+      border: none;
+      outline: none;
+      background: blue;
+      font-size: 1.0625rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .right form .btn button:hover {
+      background: red;
+    }
+
+    .bottom center {
+      padding: 5px;
+      font-size: 0.9375rem;
+      background:greenyellow;
+    }
+
+    .bottom center span {
+      color:brown;
+    }
+
+    .bottom center a {
+      coloR:CYAN;
+      text-decoration: none;
+    }
+
+    .bottom center a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 500px) {
+      footer {
+        position: relative;
+        bottom: 0px;
+      }
+
+      .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+
+      .main-content .box {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <nav>
+        <ul>
+          <li>
+            <a href="file:///C:/Users/acer/Downloads/task_7.html" class="active">Home</a>
+          </li>
+          <li>
+            <a href="file:///C:/Users/acer/Downloads/task_7.html">About us</a>
+          </li>
+          <li>
+            <a href="file:///C:/Users/acer/Downloads/task_7.html">Contact us</a>
+          </li>
+          <li>
+            <a href="file:///C:/Users/acer/Downloads/task_7.html">Help</a>
+          </li>
+
+        </ul>
+        <div class="login-signup">
+          <a href="file:///C:/Users/acer/Downloads/task_7.html">Signin</a> or <a href="file:///C:/Users/acer/Downloads/task_7.html">Signup</a>
+        </div>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="login-signup">
+        <a href="file:///C:/Users/acer/Downloads/task_7.html">signin</a> or <a href="file:///C:/Users/acer/Downloads/task_7.html">Signup</a>
+      </div>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="banner">
+      <div class="banner-text">
+        <h1>THIS IS MULTIPLE SHOPPING WEBSITES</h1>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <!--cards -->
+
+
+    <div class="card">
+
+      <div class="image">
+        <img src="./A WEBSITE_files/download (4).jpeg">
+      </div>
+      <div class="title">
+        <h1>
+          THIS IS FLIPKART</h1>
+      </div>
+      <div class="des">
+        <p>Flipkart Private Limited is an Indian e-commerce company, headquartered in Bangalore, and incorporated in Singapore as a private limited company.</p>
+        
+        <button><a href="https://www.flipkart.com/">visit here</a></button>
+      </div>
+    </div>
+    <!--cards -->
+
+
+    <div class="card">
+
+      <div class="image">
+        <img src="./A WEBSITE_files/Amazon-logo.jpg">
+      </div>
+      <div class="title">
+        <h1>
+          THIS IS AMAZON</h1>
+      </div>
+      <div class="des">
+        <p>Amazon.com, Inc. is an American multinational technology company focusing on e-commerce, cloud computing, online advertising, digital streaming, and artificial intelligence.</p>
+        <button><a href="https://www.amazon.in/">visit here</a></button>
+      </div>
+    </div>
+    <!--cards -->
+
+
+    <div class="card">
+
+      <div class="image">
+        <img src="./A WEBSITE_files/images.png">
+      </div>
+      <div class="title">
+        <h1>
+          THIS IS MYNTRA </h1>
+      </div>
+      <div class="des">
+        <p>Myntra is a major Indian fashion e-commerce company headquartered in Bengaluru, Karnataka, India. The company was founded in 2007-2008 to sell personalized gift items. In May 2014, Myntra.com was acquired by Flipkart..</p>
+        <button><a href="https://www.myntra.com/">visit here</a></button>
+      </div>
+    </div>
+    <!--cards -->
+
+
+    <div class="card">
+
+      <div class="image">
+        <img src="./A WEBSITE_files/download.png">
+      </div>
+      <div class="title">
+        <h1>
+          THIS IS MEESHO</h1>
+      </div>
+      <div class="des">
+        <p>But unlike other ecommerce platforms, Meesho is a social commerce enterprise. That is, it doesn't sell products directly to customers. Rather, it provides a platform for resellers to connect with manufacturers and suppliers, and sell products through their own social media channels.</p>
+        <button><a href="https://www.meesho.com/">visit here</a></button>
+      </div>
+    </div>
+    <!--cards -->
+
+    <div class="card">
+
+      <div class="image">
+        <img src="./A WEBSITE_files/images (1).pNg">
+      </div>
+      <div class="title">
+        <h1>
+          THIS IS PAYTM</h1>
+      </div>
+      <div class="des">
+        <p>Paytm is an Indian multinational financial technology company, that specializes in digital payments and financial services, based in Noida. It was founded in 2010 by Vijay Shekhar Sharma under One97 Communications.</p>
+        <button><a href="https://paytm.com/">visit here</a></button>
+      </div>
+    </div>
+    <!--cards -->
+
+    <div class="card">
+
+      <div class="image">
+        <img src="./A WEBSITE_files/images (2).png">
+      </div>
+      <div class="title">
+        <h1>
+          SNAPDEAL</h1>
+      </div>
+      <div class="des">
+        <p>Snapdeal is an Indian e-commerce company, based in New Delhi, India. It was founded in February 2010 by Kunal Bahl and Rohit Bansal. Snapdeal was one of the largest online marketplaces in India. .</p>
+        <button><a href="https://www.snapdeal.com/">visit here</a></button>
+
+      </div>
+    </div>
+    <!--cards -->
+
+
+    <div class="card">
+
+      <div class="image">
+        <img src="./A WEBSITE_files/download (1).pNg">
+      </div>
+      <div class="title">
+        <h1>
+          SWIGGY</h1>
+      </div>
+      <div class="des">
+        <p>Swiggy is an online food ordering and delivery platform. Founded in 2014, Swiggy is headquartered in Bangalore and operates in more than 500 Indian cities as of September 2021.
+</p>
+        <button><a href="https://www.swiggy.com/">visit here</a></button>
+      </div>
+    </div>
+    <!--cards -->
+
+
+    <div class="card">
+
+      <div class="image">
+        <img src="./A WEBSITE_files/download (3).png">
+      </div>
+      <div class="title">
+        <h1>
+          ZOMATO</h1>
+      </div>
+      <div class="des">
+        <p>Zomato is an Indian multinational restaurant aggregator and food delivery company. It was founded by Deepinder Goyal and Pankaj Chaddah in 2008..</p>
+        <button><a href="https://www.zomato.com/india">visit here</a></button>
+      </div>
+    </div>
+  </div>
+  <footer> 
+    <div class="bottom">
+      <center>
+        <span class="credit">Created By <a href="file:///C:/Users/acer/Downloads/task_7.html#">@Dilshad</a> | </span>
+        <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+
+      </center>
+    </div>
+  </footer>
+
+
+
+</body></html>
